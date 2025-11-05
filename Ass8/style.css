@@ -1,0 +1,632 @@
+* {
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  /* Dark mode */
+  --bg-color: #161b22;
+  --text-color: #e6edf3;
+  --primary-color: #58a6ff;
+  --secondary-color: #8b949e;
+  --section-gradient-home: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+  --section-gradient-about: linear-gradient(180deg, #161b22 0%, #1c2128 100%);
+  --section-gradient-skills: linear-gradient(180deg, #1c2128 0%, #161b22 100%);
+  --section-gradient-projects: linear-gradient(180deg, #161b22 0%, #14191f 100%);
+  --section-gradient-contact: linear-gradient(180deg, #14191f 0%, #0d1117 100%); 
+  --btn-bg: #58a6ff;
+  --btn-hover: #1f6feb;
+  --card-bg: #161b22;
+  --card-text: #e6edf3;
+  --footer-bg: #161b22;
+  --footer-text: #8b949e;
+  --form-bg: #0d1117;
+  --form-border: #30363d;
+  --form-text: #e6edf3;
+}
+
+body.light-theme {
+  /* Light mode */
+  --bg-color: #f5f7fa;
+  --text-color: #111;
+  --primary-color: #0d6efd;
+  --secondary-color: #555;
+  --section-gradient-home: linear-gradient(180deg, #ffffff 0%, #e0e5ec 100%);
+  --section-gradient-about: linear-gradient(180deg, #e0e5ec 0%, #d0d7e3 100%);
+  --section-gradient-skills: linear-gradient(180deg, #d0d7e3 0%, #e0e5ec 100%);
+  --section-gradient-projects: linear-gradient(180deg, #e0e5ec 0%, #edf1f6 100%);
+  --section-gradient-contact: linear-gradient(180deg, #edf1f6 0%, #ffffff 100%);
+  --btn-bg: #0d6efd;
+  --btn-hover: #0b5ed7;
+  --card-bg: #ffffff;
+  --card-text: #111;
+  --footer-bg: #e0e5ec;
+  --footer-text: #555;
+  --form-bg: #ffffff;
+  --form-border: #ccc;
+  --form-text: #111;
+}
+
+
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  padding-top: 80px;
+  cursor: url('cursor.png'), auto;
+
+  transition: all 0.5s ease;
+}
+
+/* */
+
+
+section, .card, footer, .form-control, body {
+    transition: all 0.5s ease;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar {
+  background: transparent !important;
+  padding: 1rem 0;
+}
+
+
+nav {
+  background-color: #161b22;
+}
+
+nav a {
+  color: var(--text-color) !important;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary-color) !important;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+
+  background: linear-gradient(180deg, #0d1117, #161b22);
+  background-size: 100% 200%;
+  background-attachment: fixed;
+  transition: background 1s ease;
+}
+
+.btn-custom {
+  background-color: var(--btn-bg);
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+
+
+.btn-custom:hover {
+  background-color: var(--btn-hover);
+}
+
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 12px;
+  border: 1px solid var(--form-border);
+}
+
+.form-control {
+  background-color: var(--form-bg);
+  border: 1px solid var(--form-border);
+  color: var(--form-text);
+}
+.form-control:focus {
+  border-color: var(--btn-bg);
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .profile-pic-large {
+    width: 240px;
+    height: 240px;
+  }
+  .about-img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  section {
+    height: auto;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+
+  .navbar .nav-link {
+    margin-left: 0;
+  }
+
+  .profile-pic-large {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .typed-text {
+    font-size: 1.2rem;
+  }
+
+  .btn-custom {
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+  .lead {
+    font-size: 1rem;
+  }
+}
+
+
+.skill-box {
+  background-color: #161b22;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+  transition: transform 0.3s ease, background 0.3s;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  background-color: #1c2128;
+}
+
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid #58a6ff;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+  transition: 0.4s ease;
+}
+
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(88, 166, 255, 0.8), 0 0 60px rgba(88, 166, 255, 0.4);
+  border-color: #1f6feb;
+}
+
+
+.profile-pic-large {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 4px solid #58a6ff;
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(88, 166, 255, 0.5);
+  transition: 0.4s ease;
+}
+
+.profile-pic-large:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 50px rgba(88, 166, 255, 0.8), 0 0 80px rgba(88, 166, 255, 0.4);
+  border-color: #1f6feb;
+}
+
+.typed-text {
+  font-size: 1.5rem;
+  color: #8b949e;
+  min-height: 2rem;
+}
+
+.typed-cursor {
+  color: #00bcd4;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 0.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: var(--main-color);
+    background-color: var(--main-color);
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    
+}
+
+.about-img {
+  object-fit: cover;
+  
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 188, 212, 0.5);
+}
+
+#skills {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#skills h5 {
+  font-weight: 600;
+}
+
+.progress {
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  transition: width 1.5s ease-in-out;
+}
+
+/* bUtToN */
+/* From Uiverse.io by Galahhad */ 
+.ui-btn {
+  --btn-default-bg: rgb(41, 41, 41);
+  --btn-padding: 15px 20px;
+  --btn-hover-bg: rgb(51, 51, 51);
+  --btn-transition: .3s;
+  --btn-letter-spacing: .1rem;
+  --btn-animation-duration: 1.2s;
+  --btn-shadow-color: rgba(0, 0, 0, 0.137);
+  --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+  --hover-btn-color: #bace34;
+  --default-btn-color: #fff;
+  --font-size: 16px;
+  /* 👆 this field should not be empty */
+  --font-weight: 600;
+  --font-family: Menlo,Roboto Mono,monospace;
+  /* 👆 this field should not be empty */
+}
+
+/* button settings 👆 */
+
+.ui-btn {
+  box-sizing: border-box;
+  padding: var(--btn-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  background: var(--btn-default-bg);
+  border: none;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  overflow: hidden;
+  box-shadow: var(--btn-shadow);
+}
+
+.ui-btn span {
+  letter-spacing: var(--btn-letter-spacing);
+  transition: var(--btn-transition);
+  box-sizing: border-box;
+  position: relative;
+  background: inherit;
+}
+
+.ui-btn span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background: inherit;
+}
+
+.ui-btn:hover, .ui-btn:focus {
+  background: var(--btn-hover-bg);
+}
+
+.ui-btn:hover span, .ui-btn:focus span {
+  color: var(--hover-btn-color);
+}
+
+.ui-btn:hover span::before, .ui-btn:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+  0% {content: "#";}
+  5% {content: ".";}
+  10% {content: "^{";}
+  15% {content: "-!";}
+  20% {content: "#$_";}
+  25% {content: "№:0";}
+  30% {content: "#{+.";}
+  35% {content: "@}-?";}
+  40% {content: "?{4@%";}
+  45% {content: "=.,^!";}
+  50% {content: "?2@%";}
+  55% {content: "\;1}]";}
+
+  60% {content: "?{%:%"; right: 0;}
+  65% {content: "|{f[4"; right: 0;}
+  70% {content: "{4%0%"; right: 0;}
+  75% {content: "'1_0<"; right: 0;}
+  80% {content: "{0%"; right: 0;}
+  85% {content: "]>'"; right: 0;}
+  90% {content: "4"; right: 0;}
+  95% {content: "2"; right: 0;}
+  100% {content: ""; right: 0;}
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.text-center {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.text-center:hover {
+    transform: scale(1.2);
+    cursor: default;
+}
+
+.abt-me {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.abt-me:hover {
+    transform: scale(1.2);
+    cursor: default;
+}
+
+.lead {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.lead:hover {
+    transform: scale(1.05);
+    cursor: default
+}
+
+.smth {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.smth:hover {
+    transform: scale(1.2);
+    cursor: default;
+}
+
+#ajaj {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#ajaj:hover {
+    transform: scale(1.2);
+    cursor: default;
+}
+
+.logo {
+    border-radius: 50%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #000000;
+}
+
+.logo:hover {
+    box-shadow: 0 0 10px rgba(219, 255, 88, 0.8), 0 0 25px rgba(149, 170, 57, 0.4);
+}
+
+.perc {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.perc:hover {
+    transform: scale(1.2);
+    cursor: default;
+}
+
+.tch {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tch:hover {
+    transform: scale(1.2);
+    cursor: default;
+}
+
+.tchh {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tchh:hover {
+    transform: scale(1.05);
+    cursor: default;
+}
+
+
+#home {
+  background: var(--section-gradient-home);
+}
+#about {
+  background: var(--section-gradient-about);
+}
+#skills {
+  background: var(--section-gradient-skills);
+}
+#projects {
+  background: var(--section-gradient-projects);
+}
+#contact {
+  background: var(--section-gradient-contact);
+}
+
+
+/* */
+/* From Uiverse.io by JustCode14 */ 
+/* Theme Switch */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 4em;
+  height: 2.2em;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2a2a2a;
+  transition: 0.4s;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.2em;
+  width: 1.2em;
+  border-radius: 20px;
+  left: 0.5em;
+  bottom: 0.5em;
+  transition: 0.4s;
+  transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
+  box-shadow: inset 8px -4px 0px 0px #fff;
+}
+
+.switch input:checked + .slider {
+  background-color: #00a6ff;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.8em);
+  box-shadow: inset 15px -4px 0px 15px #ffcf48;
+}
+
+.star {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  width: 5px;
+  transition: all 0.4s;
+  height: 5px;
+}
+
+.star_1 {
+  left: 2.5em;
+  top: 0.5em;
+}
+
+.star_2 {
+  left: 2.2em;
+  top: 1.2em;
+}
+
+.star_3 {
+  left: 3em;
+  top: 0.9em;
+}
+
+.switch input:checked ~ .slider .star {
+  opacity: 0;
+}
+
+.cloud {
+  width: 3.5em;
+  position: absolute;
+  bottom: -1.4em;
+  left: -1.1em;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.switch input:checked ~ .slider .cloud {
+  opacity: 1;
+}
